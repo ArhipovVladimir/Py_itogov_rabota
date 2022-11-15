@@ -9,16 +9,21 @@
 # 7. Определить промежутки, на котором f < 0
 
 from sympy import *
+from sympy.plotting import plot
+from scipy.optimize import fsolve
 import matplotlib.pyplot as plt
+import numpy
 
-# print("1. Определить корни")
+
+print("1. Определить корни")
 x = Symbol('x')
 func = 5*x**2+10*x-30
-# y = solve(func)
-# # print(y)
-# x1 = round(float(y[0]), 2)
-# x2 = round(float(y[1]), 2)
-# print(f"корни уровнения - {func}: {x1} и {x2}")
+# func = -12*x**4 * sin(cos(x)) - 18*x**3 + 5*x**2 + 10*x - 30
+y = solve(func)
+print(y)
+x1 = round(float(y[0]), 2)
+x2 = round(float(y[1]), 2)
+print(f"корни уровнения - {func}: {x1} и {x2}")
 
 print("2. Найти интервалы, на которых функция возрастает")
 fd = diff(func)
